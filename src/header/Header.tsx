@@ -59,12 +59,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                             <li><Link to={{ pathname: '/home' }} >Home</Link></li>
                             <li><Link to={{ pathname: '/user' }} >User</Link></li>
                             <li><Link to={{ pathname: '/camera' }} >Câmera</Link></li>
+                            <li><Link to={{ pathname: '/toast' }} >Toast</Link></li>
                         </ul>
-
-                        <form className="busca">
-                            <input type="search" id="campo-busca" />
-                            <button type="submit">Buscar</button>
-                        </form>
                     </nav>
                 </div>
             </header>

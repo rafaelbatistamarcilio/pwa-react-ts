@@ -18,9 +18,9 @@ class App extends React.Component {
             <Route exact={true} path="/" component={Home} />
             <Route path="/user" component={User} />
             <Route path="/camera" component={Camera} />
+            <Route path="/toast" component={Toast} />
           </Switch>
         </main>
-        <Toast />
       </div>
     );
   }

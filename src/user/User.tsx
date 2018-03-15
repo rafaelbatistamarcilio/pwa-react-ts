@@ -28,7 +28,6 @@ export default class User extends React.Component<UserProps, UserState> {
     }
 
     public handleSubmit() {
-        console.log('USER COMPONENT');
         console.log(this.state.user);
     }
 
