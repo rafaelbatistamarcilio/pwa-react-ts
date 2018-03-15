@@ -1,0 +1,43 @@
+header {
+    background: #24292e;
+    width: 100%;
+    padding: 0.5em 0;
+    color: white
+}
+
+.menu-abrir,
+.menu-fechar {
+    color: #a0a2a3;
+    background: none;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    font-size: 1.6em;
+    text-indent: -999em;
+}
+
+.menu-abrir {
+    color: #a0a2a3;
+    height: 0;
+    width: .75em;
+    padding-top: .125em;
+    border-top: .375em double #a0a2a3;
+    border-bottom: .125em solid #a0a2a3;
+    vertical-align: middle;
+    margin: 0.5em;
+}
+
+.menu-fechar {
+    color: #a0a2a3;
+    position: relative;
+    height: 1em;
+    width: 1em;
+}
+
+.menu-fechar:before {
+    content: '\00D7';
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 0;
+}
