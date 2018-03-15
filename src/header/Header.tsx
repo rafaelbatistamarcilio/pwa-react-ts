@@ -56,10 +56,10 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                             Fecha Menu
                         </button>
                         <ul className="menu-principal">
-                            <li><Link to={{ pathname: '/home' }} >Home</Link></li>
-                            <li><Link to={{ pathname: '/user' }} >User</Link></li>
-                            <li><Link to={{ pathname: '/camera' }} >Câmera</Link></li>
-                            <li><Link to={{ pathname: '/toast' }} >Toast</Link></li>
+                            <li><Link to={{ pathname: '/home' }} onClick={e => this.closeMenu()} >Home</Link></li>
+                            <li><Link to={{ pathname: '/user' }} onClick={e => this.closeMenu()}>User</Link></li>
+                            <li><Link to={{ pathname: '/camera' }} onClick={e => this.closeMenu()}>Câmera</Link></li>
+                            <li><Link to={{ pathname: '/toast' }} onClick={e => this.closeMenu()}>Toast</Link></li>
                         </ul>
                     </nav>
                 </div>
