@@ -13,15 +13,19 @@ interface CameraPropoerties {
 
 class Camera extends React.Component<CameraPropoerties, CameraState> {
 
+  private cameraService: CameraService;
+
   constructor(props: CameraPropoerties) {
     super(props);
     this.state = {
       label: 'Câmera'
     };
+
+    this.cameraService = new CameraService();
   }
 
   public getImage(): void {
-    CameraService.loadImage('img-container');
+    this.cameraService.loadImage('img-container');
   }
 
   render() {

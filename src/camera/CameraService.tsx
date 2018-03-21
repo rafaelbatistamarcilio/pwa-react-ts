@@ -5,17 +5,11 @@ interface HTMLInputEvent extends Event {
 
 export default class CameraService {
 
-    public static captureImage(callback: (base64Image: string) => void): void {
+    public captureImage(callback: (base64Image: string) => void): void {
         let input: HTMLInputElement = document.getElementById('camera') as HTMLInputElement;
 
         if (!input) {
-            input = document.createElement('input');
-            input.accept = 'image/*';
-            input.setAttribute('capture', 'camera');
-            input.setAttribute('style', 'display:none');
-            input.type = 'file';
-            input.id = 'camera';
-            document.body.appendChild(input);
+            input = this.createCamera();
         }
 
         input.click();
@@ -25,8 +19,8 @@ export default class CameraService {
                 const file: File = event.target.files[0];
                 const fileReader: FileReader = new FileReader();
 
-                fileReader.onloadend = ( progressEvent: ProgressEvent ) => {
-                    callback( fileReader.result );
+                fileReader.onloadend = (progressEvent: ProgressEvent) => {
+                    callback(fileReader.result);
                 };
 
                 fileReader.readAsDataURL(file);
@@ -34,17 +28,11 @@ export default class CameraService {
         };
     }
 
-    public static loadImage( imageContainerId: string ): void {
+    public loadImage(imageContainerId: string): void {
         let input: HTMLInputElement = document.getElementById('camera') as HTMLInputElement;
 
         if (!input) {
-            input = document.createElement('input');
-            input.accept = 'image/*';
-            input.setAttribute('capture', 'camera');
-            input.setAttribute('style', 'display:none');
-            input.type = 'file';
-            input.id = 'camera';
-            document.body.appendChild(input);
+            input = this.createCamera();
         }
 
         input.click();
@@ -57,7 +45,7 @@ export default class CameraService {
                 const fileReader: FileReader = new FileReader();
 
                 fileReader.onloadend = (progressEvent: ProgressEvent) => {
-                    CameraService.setImage(fileReader.result, imageContainerId);
+                    this.setImage(fileReader.result, imageContainerId);
                 };
 
                 fileReader.readAsDataURL(file);
@@ -65,7 +53,7 @@ export default class CameraService {
         };
     }
 
-    public static setImage(imgBase64: string, containerId: string): void {
+    public setImage(imgBase64: string, containerId: string): void {
         let image: HTMLImageElement = document.getElementById('photo') as HTMLImageElement;
 
         if (!image) {
@@ -82,5 +70,16 @@ export default class CameraService {
         } else {
             throw new Error('Element ID: ' + containerId + 'not found');
         }
+    }
+
+    private createCamera(): HTMLInputElement {
+        const cameraInput = document.createElement('input');
+        cameraInput.accept = 'image/*';
+        cameraInput.setAttribute('capture', 'camera');
+        cameraInput.setAttribute('style', 'display:none');
+        cameraInput.type = 'file';
+        cameraInput.id = 'camera';
+        document.body.appendChild(cameraInput);
+        return cameraInput;
     }
 }

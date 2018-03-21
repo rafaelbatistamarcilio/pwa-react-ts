@@ -29,11 +29,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     }
 
     public whatchClicks(): void {
-        // tslint:disable-next-line:no-console
-        console.log('whatchClicks');
         document.documentElement.onclick = (event) => {
-            // tslint:disable-next-line:no-console
-            console.log('whatchClicks onclick');
             if (event.target === document.documentElement) {
                 document.documentElement.classList.remove('menu-ativo');
             }
@@ -41,27 +37,26 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     }
 
     render() {
+        this.whatchClicks();
         return (
             <header>
                 <div className="container">
-                    <button className="menu-abrir" onClick={e => this.openMenu()}>
-                        Abre Menu
-                    </button>
                     <h1 className="logo">
                         Logo
                     </h1>
-
                     <nav className="barra-nav">
-                        <button id="openMenuBtn" className="menu-fechar" onClick={e => this.closeMenu()}>
-                            Fecha Menu
+                        <button  className="menu-fechar" onClick={e => this.closeMenu()} >
+                            <i className="fas fa-times-circle fa-2x" />
                         </button>
                         <ul className="menu-principal">
-                            <li><Link to={{ pathname: '/home' }} onClick={e => this.closeMenu()} >Home</Link></li>
-                            <li><Link to={{ pathname: '/user' }} onClick={e => this.closeMenu()}>User</Link></li>
-                            <li><Link to={{ pathname: '/camera' }} onClick={e => this.closeMenu()}>Câmera</Link></li>
-                            <li><Link to={{ pathname: '/toast' }} onClick={e => this.closeMenu()}>Toast</Link></li>
+                            <li><Link to={{ pathname: '/home' }}   onClick={e => this.closeMenu()}> Home</Link></li>
+                            <li><Link to={{ pathname: '/user' }}   onClick={e => this.closeMenu()}> User</Link></li>
+                            <li><Link to={{ pathname: '/camera' }} onClick={e => this.closeMenu()}> Câmera</Link></li>
+                            <li><Link to={{ pathname: '/toast' }}  onClick={e => this.closeMenu()}> Toast</Link></li>
                         </ul>
                     </nav>
+
+                    <button className="menu-abrir" onClick={e => this.openMenu()} />
                 </div>
             </header>
         );

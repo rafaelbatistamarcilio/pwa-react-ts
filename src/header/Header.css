@@ -5,8 +5,7 @@ header {
     color: white
 }
 
-.menu-abrir,
-.menu-fechar {
+.menu-abrir {
     color: #a0a2a3;
     background: none;
     border: 0;
@@ -14,30 +13,65 @@ header {
     -webkit-appearance: none;
     font-size: 1.6em;
     text-indent: -999em;
-}
-
-.menu-abrir {
-    color: #a0a2a3;
     height: 0;
     width: .75em;
     padding-top: .125em;
     border-top: .375em double #a0a2a3;
     border-bottom: .125em solid #a0a2a3;
     vertical-align: middle;
-    margin: 0.5em;
+    margin-right: 1em;
+    position: absolute;
+    right: 0px;
 }
 
 .menu-fechar {
-    color: #a0a2a3;
-    position: relative;
-    height: 1em;
-    width: 1em;
+    background-color: transparent;
+    border: none;
+    margin-right: 1em;
+    position: absolute;
+    right: 0px;
 }
 
-.menu-fechar:before {
-    content: '\00D7';
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-indent: 0;
+.logo img {
+    width: 200px;
+}
+
+.logo,
+.secao {
+    padding: 0 1%;
+    margin-left: 2em;
+}
+
+.logo,
+.busca,
+.barra-nav,
+.menu-principal {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu-principal {
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.menu-principal a {
+    display: block;
+    padding-right: 1em;
+    margin-right: 1em;
+    line-height: 1;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-principal a:hover {
+    opacity: 0.8;
+}
+
+.menu-principal {
+    margin-top: 2em;
+}
+
+.menu-principal li {
+    float: left;
 }

@@ -108,24 +108,6 @@ body {
   color: #ff7f00;
 }
 
-.menu-principal {
-  font-weight: bold;
-  list-style-type: none;
-}
-
-.menu-principal a {
-  display: block;
-  padding-right: 1em;
-  margin-right: 1em;
-  line-height: 1;
-  text-decoration: none;
-  text-transform: lowercase;
-}
-
-.menu-principal a:hover {
-  opacity: 0.8;
-}
-
 /* lista de notícias */
 
 .chamada {
@@ -225,27 +207,6 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-}
-
-.logo img {
-  width: 200px;
-}
-
-.logo,
-.secao {
-  padding: 0 1%;
-}
-
-.logo,
-.busca,
-.barra-nav,
-.menu-principal {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.menu-principal li {
-  float: left;
 }
 
 
